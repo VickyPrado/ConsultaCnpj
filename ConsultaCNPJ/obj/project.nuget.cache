@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KjL/nB/C9Uc=",
+  "dgSpecHash": "Mh1drA6MbkU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
+  "projectFilePath": "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vicky\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\Vicky\\.nuget\\packages\\itext\\9.1.0\\itext.9.1.0.nupkg.sha512",
