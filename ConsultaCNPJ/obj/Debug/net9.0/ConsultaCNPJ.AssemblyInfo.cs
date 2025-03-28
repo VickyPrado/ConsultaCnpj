@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsultaCNPJ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e850ff1f6d94b1519d17e6e12f84990d83df27f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2b00fc1c4ab2e493d1850bf2b93250438a4a5a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsultaCNPJ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsultaCNPJ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
