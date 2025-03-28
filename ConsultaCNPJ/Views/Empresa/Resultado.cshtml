@@ -1,7 +1,5 @@
 ﻿@model List<ConsultaCNPJ.Models.Empresa>
 
-<h2>Dados da empresa</h2>
-
 @if (TempData["Erro"] != null)
 {
     <p style="color: red;">@TempData["Erro"]</p>
@@ -13,6 +11,7 @@
 
     foreach (var empresa in empresas)
     {
+        <h2>Dados da empresa</h2>
         <p><strong>CNPJ:</strong> @(empresa.Cnpj ?? "N/A") - @(empresa.Tipo ?? "N/A")</p>
         <p><strong>Nome:</strong> @(empresa.Nome ?? "N/A")</p>
         <p><strong>Abertura:</strong> @(empresa.Abertura ?? "N/A")</p>

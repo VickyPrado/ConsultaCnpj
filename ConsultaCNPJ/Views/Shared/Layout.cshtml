@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consulta CNPJ</title>
-    
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,20 +13,46 @@
         }
 
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            text-align: center;
+            background-image: url('https://media.licdn.com/dms/image/v2/D4D3DAQHgVLfYcvTV6w/image-scale_191_1128/image-scale_191_1128/0/1699626753803/grupo_gps_cover?e=2147483647&v=beta&t=hWyt0fjBqY8fmJNfPH2mxNa1MbbfQsJlKON0I_J0MUM');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            padding: 0;
         }
 
         .container {
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 80%;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .consulta, .empresas-cadastradas {
+            flex: 1;
+            min-width: 0;
+        }
+
+            .consulta h2, .empresas-cadastradas h3 {
+                margin-top: 0;
+            }
+
+        #mensagem-sucesso {
+            color: green;
+        }
+
+        .erro {
+            color: red;
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #f8f9fa;
+            font-size: 20px ;
+            background-color: #003087;
+            color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -34,14 +60,12 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Consulta CNPJ</h1>
-    </header>
+    <header></header>
     <div class="container">
         @RenderBody()
     </div>
     <footer>
-        <p>&copy; 2025 - Consulta CNPJ</p>
+        <p>© 2025 - Consulta CNPJ</p>
     </footer>
 </body>
 </html>
