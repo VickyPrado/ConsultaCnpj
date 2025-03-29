@@ -6,10 +6,11 @@
 
 <div class="consulta">
     <h2>Consultar CNPJ</h2>
-    <form method="post" asp-action="Consultar">
+    <form method="post" asp-action="Consultar" id="consulta-form">
         <label for="cnpjs">CNPJs (separados por vírgula):</label>
         <input type="text" name="cnpjs" maxlength="500" placeholder="Ex.: 14.380.200/0001-21" />
         <button type="submit">Consultar</button>
+        <p class="aviso-api">Aviso: A API da ReceitaWS permite apenas 3 consultas por minuto. Você pode consultar no máximo 3 CNPJs por vez e deve esperar 60s entre cada consulta.</p>
     </form>
     @if (TempData["Mensagem"] != null)
     {
@@ -38,6 +39,22 @@
 </div>
 
 <script>
+    var cnpjsInput = document.querySelector('input[name="cnpjs"]');
+    var submitButton = document.querySelector('button[type="submit"]');
+
+    function validarCnpjs() {
+        var cnpjList = cnpjsInput.value.split(',').filter(cnpj => cnpj.trim() !== '');
+        if (cnpjList.length > 3) {
+            submitButton.disabled = true;
+            submitButton.style.opacity = "0.5";
+        } else {
+            submitButton.disabled = false;
+            submitButton.style.opacity = "1";
+        }
+    }
+
+    cnpjsInput.addEventListener("input", validarCnpjs);
+
     setTimeout(function() {
         var mensagem = document.getElementById("mensagem-sucesso");
         if (mensagem) {

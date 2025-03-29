@@ -35,6 +35,12 @@ namespace ConsultaCNPJ.Controllers
             }
 
             var cnpjList = cnpjs.Split(',').Select(c => c.Trim().Replace(".", "").Replace("/", "").Replace("-", "")).ToList();
+            if (cnpjList.Count > 3)
+            {
+                ViewBag.Erro = "Você pode consultar no máximo 3 CNPJs por vez devido ao limite da API da ReceitaWS.";
+                return View(_empresasSalvas);
+            }
+
             var empresasExistentes = _empresasSalvas.Where(e => cnpjList.Contains(e.Cnpj?.Replace(".", "").Replace("/", "").Replace("-", "") ?? "")).ToList();
             var cnpjNaoSalvos = cnpjList.Except(empresasExistentes.Select(e => e.Cnpj?.Replace(".", "").Replace("/", "").Replace("-", "") ?? "")).ToList();
 
@@ -262,11 +268,6 @@ namespace ConsultaCNPJ.Controllers
             {
                 document.Add(new Paragraph("- Nenhum sócio registrado"));
             }
-        }
-
-        public IActionResult EmpresasCadastradas()
-        {
-            return View(_empresasSalvas);
         }
     }
 }
