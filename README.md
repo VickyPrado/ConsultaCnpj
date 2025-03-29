@@ -1,5 +1,5 @@
 ﻿# Consulta CNPJ
-Projeto desenvolvido em C# com objetivo de permitir que o usuário consulte informações de empresas a partir de CNPJs válidos, utilizando a API da ReceitaWS, exibir os dados retornados e ofereça opções para salvá-los em diferentes formatos.
+Projeto desenvolvido em C# com objetivo de permitir que o usuário consulte informações de empresas a partir de CNPJs válidos, utilizando a API da ReceitaWS, exibindo os dados retornados e oferecendo opções para salvá-los em diferentes formatos.
 
 
 ## Funcionalidades
