@@ -20,16 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Empresa/Consultar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDb25zdWx0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Empresa/Resultado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxSZXN1bHRhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Shared/Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Vicky/Desktop/Documentos_da_vicky/repositorios/Teste GPS/ConsultaCNPJ/Views/Shared/_ValidationScriptsPartial.cshtml]

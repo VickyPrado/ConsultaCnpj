@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj": {}
+    "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj": {
+    "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
+        "projectUniqueName": "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
         "projectName": "ConsultaCNPJ",
-        "projectPath": "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
+        "projectPath": "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\ConsultaCNPJ.csproj",
         "packagesPath": "C:\\Users\\Vicky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vicky\\Documents\\Teste GPS\\ConsultaCNPJ\\obj\\",
+        "outputPath": "C:\\Users\\Vicky\\Desktop\\Documentos_da_vicky\\repositorios\\Teste GPS\\ConsultaCNPJ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
