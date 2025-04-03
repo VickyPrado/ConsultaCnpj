@@ -40,13 +40,26 @@
             flex-grow: 1;
         }
 
+
         .consulta, .empresas-cadastradas {
             flex: 1;
             min-width: 0;
         }
 
-            .consulta h2, .empresas-cadastradas h3 {
+            .consulta h1, .empresas-cadastradas h1 {
+                font-size: 2em;
                 margin-top: 0;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+        .empresas-cadastradas {
+            align-self: flex-start;
+            
+        }
+
+            .empresas-cadastradas h1 {
+                text-align: center;
             }
 
             .consulta input[type="text"] {
