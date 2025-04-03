@@ -17,25 +17,25 @@
         foreach (var empresa in empresas)
         {
             <h2>Dados da empresa</h2>
-            <p><strong>CNPJ:</strong> @(empresa.Cnpj ?? "N/A") - @(empresa.Tipo ?? "N/A")</p>
-            <p><strong>Nome:</strong> @(empresa.Nome ?? "N/A")</p>
-            <p><strong>Abertura:</strong> @(empresa.Abertura ?? "N/A")</p>
-            <p><strong>Endereço:</strong> @(empresa.Logradouro ?? ""), @(empresa.Numero ?? "") - @(empresa.Bairro ?? ""), @(empresa.Municipio ?? "")/@(empresa.Uf ?? "") - @(empresa.Cep ?? "N/A")</p>
-            <p><strong>Telefone:</strong> @(empresa.Telefone ?? "N/A")</p>
-            <p><strong>Email:</strong> @(empresa.Email ?? "N/A")</p>
+            <p><b>CNPJ:</b> @(empresa.Cnpj ?? "N/A") - @(empresa.Tipo ?? "N/A")</p>
+            <p><b>Nome:</b> @(empresa.Nome ?? "N/A")</p>
+            <p><b>Abertura:</b> @(empresa.Abertura ?? "N/A")</p>
+            <p><b>Endereço:</b> @(empresa.Logradouro ?? ""), @(empresa.Numero ?? "") - @(empresa.Bairro ?? ""), @(empresa.Municipio ?? "")/@(empresa.Uf ?? "") - @(empresa.Cep ?? "N/A")</p>
+            <p><b>Telefone:</b> @(empresa.Telefone ?? "N/A")</p>
+            <p><b>Email:</b> @(empresa.Email ?? "N/A")</p>
 
             string capitalSocialFormatado = "N/A";
             if (!string.IsNullOrEmpty(empresa.CapitalSocial) && decimal.TryParse(empresa.CapitalSocial, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal capitalSocial))
             {
                 capitalSocialFormatado = $"R$ {capitalSocial.ToString("N2", new System.Globalization.CultureInfo("pt-BR"))}";
             }
-            <p><strong>Capital Social:</strong> @capitalSocialFormatado</p>
-            <p><strong>Simples Nacional:</strong> @(empresa.SimplesNacional ?? "N/A")</p>
-            <p><strong>MEI:</strong> @(empresa.Mei ?? "N/A")</p>
-            <p><strong>Situação Cadastral:</strong> @(empresa.SituacaoCadastral ?? "N/A")</p>
-            <p><strong>Data da Situação Cadastral:</strong> @(empresa.DataSituaçãoCadastral ?? "N/A")</p>
-            <p><strong>Natureza Jurídica:</strong> @(empresa.NaturezaJurídica ?? "N/A")</p>
-            <p><strong>Atividade Econômica Primária:</strong> @(empresa.AtividadePrincipal?.FirstOrDefault()?.Text ?? "N/A") (@(empresa.AtividadePrincipal?.FirstOrDefault()?.Code ?? "N/A"))</p>
+            <p><b>Capital Social:</b> @capitalSocialFormatado</p>
+            <p><b>Simples Nacional:</b> @(empresa.SimplesNacional ?? "N/A")</p>
+            <p><b>MEI:</b> @(empresa.Mei ?? "N/A")</p>
+            <p><b>Situação Cadastral:</b> @(empresa.SituacaoCadastral ?? "N/A")</p>
+            <p><b>Data da Situação Cadastral:</b> @(empresa.DataSituaçãoCadastral ?? "N/A")</p>
+            <p><b>Natureza Jurídica:</b> @(empresa.NaturezaJurídica ?? "N/A")</p>
+            <p><b>Atividade Econômica Primária:</b> @(empresa.AtividadePrincipal?.FirstOrDefault()?.Text ?? "N/A") (@(empresa.AtividadePrincipal?.FirstOrDefault()?.Code ?? "N/A"))</p>
 
             <h3>Atividades Econômicas Secundárias</h3>
             <ul>
