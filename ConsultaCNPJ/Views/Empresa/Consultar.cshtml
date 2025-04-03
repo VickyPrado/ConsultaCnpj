@@ -39,14 +39,17 @@
     const submitButton = document.querySelector('button[type="submit"]');
 
     function validateCnpjs() {
+        
         const cnpjList = cnpjsInput.value.split(',').map(cnpj => cnpj.trim()).filter(Boolean);
-        const isValid = cnpjList.length <= 3 && cnpjList.every(cnpj => /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(cnpj));
-        submitButton.disabled = !isValid;
-        submitButton.style.opacity = isValid ? '1' : '0.5';
+        
+        const exceedsLimit = cnpjList.length > 3;
+        
+        submitButton.disabled = exceedsLimit;
+        submitButton.style.opacity = exceedsLimit ? '0.5' : '1';
     }
-
+    
     cnpjsInput.addEventListener('input', validateCnpjs);
-
+    
     setTimeout(() => {
         const mensagem = document.getElementById('mensagem-sucesso');
         if (mensagem) mensagem.style.display = 'none';
