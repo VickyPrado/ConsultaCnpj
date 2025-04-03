@@ -10,11 +10,9 @@
         <p class="erro">@TempData["Erro"]</p>
     }
 
-    @if (Model != null && Model.Any())
+    @if (Model?.Any() == true)
     {
-        var empresas = Model;
-
-        foreach (var empresa in empresas)
+        foreach (var empresa in Model)
         {
             <h2>Dados da empresa</h2>
             <p><b>CNPJ:</b> @(empresa.Cnpj ?? "N/A") - @(empresa.Tipo ?? "N/A")</p>
@@ -27,7 +25,7 @@
             string capitalSocialFormatado = "N/A";
             if (!string.IsNullOrEmpty(empresa.CapitalSocial) && decimal.TryParse(empresa.CapitalSocial, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out decimal capitalSocial))
             {
-                capitalSocialFormatado = $"R$ {capitalSocial.ToString("N2", new System.Globalization.CultureInfo("pt-BR"))}";
+                capitalSocialFormatado = $"R$ {capitalSocial:N2}";
             }
             <p><b>Capital Social:</b> @capitalSocialFormatado</p>
             <p><b>Simples Nacional:</b> @(empresa.SimplesNacional ?? "N/A")</p>
@@ -39,7 +37,7 @@
 
             <h3>Atividades Econômicas Secundárias</h3>
             <ul>
-                @foreach (var atividade in empresa.AtividadesSecundarias ?? new List<ConsultaCNPJ.Models.Atividade>())
+                @foreach (var atividade in empresa.AtividadesSecundarias ?? [])
                 {
                     <li>@(atividade.Text ?? "N/A") (@(atividade.Code ?? "N/A"))</li>
                 }
@@ -47,36 +45,29 @@
 
             <h3>Quadro de Sócios</h3>
             <ul>
-                @foreach (var socio in empresa.Qsa ?? new List<ConsultaCNPJ.Models.Socio>())
+                @foreach (var socio in empresa.Qsa ?? [])
                 {
                     <li>@(socio.Nome ?? "N/A") - @(socio.Qual ?? "N/A")</li>
                 }
-            </ul>
-
-            @if (empresas.Count > 1)
-            {
-                <hr />
-            }
+            </ul>            
+            <hr />            
         }
-
-        <form method="post" asp-action="Salvar" target="_self">
-            @{
-                var jsonEmpresas = Newtonsoft.Json.JsonConvert.SerializeObject(empresas);
-            }
-            <input type="hidden" name="empresas" value="@jsonEmpresas" />
-            <label><strong>Escolha como salvar:</strong></label>
-            <select name="formato">
-                <option value="site">Salvar no site</option>
-                <option value="txt">Salvar como TXT</option>
-                <option value="pdf">Salvar como PDF</option>
-            </select>
-            <button type="submit">Salvar @(empresas.Count > 1 ? "Todas" : "")</button>
-        </form>
+        <div class="salvar-container">
+            <p class="salvar-label">Escolha como salvar:</p>
+            <form method="post" asp-action="Salvar" target="_self">
+                <input type="hidden" name="empresas" value="@Newtonsoft.Json.JsonConvert.SerializeObject(Model)" />
+                <select name="formato">
+                    <option value="site">Salvar no site</option>
+                    <option value="txt">Salvar como TXT</option>
+                    <option value="pdf">Salvar como PDF</option>
+                </select>
+                <button type="submit" class="btn-primary">Salvar @(Model.Count > 1 ? "Todas" : "")</button>
+            </form>
+        </div>        
+        <p><a href="/Empresa/Consultar" class="btn-primary">Nova Consulta</a></p>
     }
     else
     {
         <p>Nenhuma empresa encontrada.</p>
     }
-
-    <a href="/Empresa/Consultar"><strong>Nova Consulta</strong></a>
 </div>

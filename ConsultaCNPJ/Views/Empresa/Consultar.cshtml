@@ -8,8 +8,8 @@
     <h1>Consultar CNPJ</h1>
     <form method="post" asp-action="Consultar" id="consulta-form">
         <label for="cnpjs">CNPJs (separados por vírgula):</label>
-        <input type="text" name="cnpjs" maxlength="500" placeholder="Ex.: 14.380.200/0001-21" />
-        <button type="submit">Consultar</button>
+        <input type="text" name="cnpjs" id="cnpjs" maxlength="500" placeholder="Ex.: 14.380.200/0001-21" />
+        <button type="submit" class="btn-primary" aria-label="Consultar CNPJ">Consultar</button>
         <p class="aviso-api">Aviso: A API da ReceitaWS permite apenas 3 consultas por minuto. Você pode consultar no máximo 3 CNPJs por vez e deve esperar 60s entre cada consulta.</p>
     </form>
     @if (TempData["Mensagem"] != null)
@@ -22,7 +22,7 @@
     }
 </div>
 <div class="empresas-cadastradas">
-    @if (Model != null && Model.Any())
+    @if (Model?.Any() == true)
     {
         <h1>Empresas Cadastradas</h1>
         <ul>
@@ -31,30 +31,24 @@
                 <li>@empresa.Cnpj - @empresa.Nome</li>
             }
         </ul>
-    }    
+    }
 </div>
 
 <script>
-    var cnpjsInput = document.querySelector('input[name="cnpjs"]');
-    var submitButton = document.querySelector('button[type="submit"]');
+    const cnpjsInput = document.querySelector('#cnpjs');
+    const submitButton = document.querySelector('button[type="submit"]');
 
-    function validarCnpjs() {
-        var cnpjList = cnpjsInput.value.split(',').filter(cnpj => cnpj.trim() !== '');
-        if (cnpjList.length > 3) {
-            submitButton.disabled = true;
-            submitButton.style.opacity = "0.5";
-        } else {
-            submitButton.disabled = false;
-            submitButton.style.opacity = "1";
-        }
+    function validateCnpjs() {
+        const cnpjList = cnpjsInput.value.split(',').map(cnpj => cnpj.trim()).filter(Boolean);
+        const isValid = cnpjList.length <= 3 && cnpjList.every(cnpj => /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(cnpj));
+        submitButton.disabled = !isValid;
+        submitButton.style.opacity = isValid ? '1' : '0.5';
     }
 
-    cnpjsInput.addEventListener("input", validarCnpjs);
+    cnpjsInput.addEventListener('input', validateCnpjs);
 
-    setTimeout(function() {
-        var mensagem = document.getElementById("mensagem-sucesso");
-        if (mensagem) {
-            mensagem.style.display = "none";
-        }
+    setTimeout(() => {
+        const mensagem = document.getElementById('mensagem-sucesso');
+        if (mensagem) mensagem.style.display = 'none';
     }, 4000);
 </script>

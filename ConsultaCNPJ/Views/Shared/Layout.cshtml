@@ -6,6 +6,11 @@
     <title>Consulta CNPJ</title>
 
     <style>
+        :root {
+            --primary-color: #003087;
+            --primary-hover: #0055b3;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -26,7 +31,6 @@
             background-size: cover;
             background-position: center;
             height: 200px;
-            padding: 0;
         }
 
         .container {
@@ -40,44 +44,46 @@
             flex-grow: 1;
         }
 
-
-        .consulta, .empresas-cadastradas {
+        .consulta,
+        .empresas-cadastradas {
             flex: 1;
             min-width: 0;
         }
 
-            .consulta h1, .empresas-cadastradas h1 {
+            .consulta h1,
+            .empresas-cadastradas h1 {
                 font-size: 2em;
-                margin-top: 0;
-                margin-bottom: 10px;
+                margin: 0 0 10px;
                 font-weight: bold;
             }
 
         .empresas-cadastradas {
             align-self: flex-start;
-            
         }
 
             .empresas-cadastradas h1 {
                 text-align: center;
             }
 
-            .consulta input[type="text"] {
-                width: 100%;
-                padding: 12px;
-                font-size: 20px;
-                margin: 10px 0;
-            }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+        }
 
-            .consulta button {
-                padding: 12px 24px;
-                font-size: 20px;
-                cursor: pointer;
-            }
+        .consulta input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 20px;
+            margin: 10px 0;
+        }
 
-            .empresas-cadastradas ul li {
-                margin-bottom: 15px;
-            }
+        .empresas-cadastradas ul li {
+            margin-bottom: 15px;
+        }
 
         .aviso-api {
             background-color: #ffeb3b;
@@ -97,25 +103,68 @@
             color: red;
         }
 
-        .resultado form select {
-            padding: 10px;
-            font-size: 20px;
-            margin-right: 10px;
+        .resultado {
+            margin-bottom: 40px;
+        }
+
+        .salvar-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .salvar-label {
+            margin: 0;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            border-radius: 8px;
+            font-weight: 700;
+            background-color: var(--primary-color);
+            color: #FFF;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+            .btn-primary:hover,
+            .btn-primary:focus {
+                background-color: var(--primary-hover);
+                outline: none;
+            }
+
+        .consulta button,
+        .resultado a {
+            border-radius: 10px;
+            font-size: 24px;
+            padding: 20px 50px;
+            display: inline-block;
         }
 
         .resultado form button {
+            font-size: 18px;
             padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
         }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 20px;
-            background-color: #003087;
-            color: white;
-            width: 100%;
+        .resultado form select {
+            padding: 10px 30px 10px 15px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--primary-hover);
+            color: #FFF;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
         }
     </style>
 </head>
